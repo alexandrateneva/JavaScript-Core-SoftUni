@@ -1,0 +1,6 @@
+function sum3numbers(a, b, c) {
+    let sum = a + b + c;
+    console.log(sum);
+}
+
+sum3numbers(1, 2, 3);
