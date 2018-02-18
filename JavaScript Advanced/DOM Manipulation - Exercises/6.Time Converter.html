@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Time Converter</title>
+    <style>
+        label, input {
+            display: inline-block;
+            width: 5em;
+        }
+
+        label {
+            text-align: right;
+        }
+    </style>
+</head>
+<body onload="attachEventsListeners()">
+<h1>Time Converter</h1>
+<div>
+    <label for="days">Days: </label>
+    <input type="text" id="days">
+    <input id="daysBtn" type="button" value="Convert">
+</div>
+<div>
+    <label for="hours">Hours: </label>
+    <input type="text" id="hours">
+    <input id="hoursBtn" type="button" value="Convert">
+</div>
+<div>
+    <label for="minutes">Minutes: </label>
+    <input type="text" id="minutes">
+    <input id="minutesBtn" type="button" value="Convert">
+</div>
+<div>
+    <label for="seconds">Seconds: </label>
+    <input type="text" id="seconds">
+    <input id="secondsBtn" type="button" value="Convert">
+</div>
+</body>
+<script>
+    function attachEventsListeners() {
+        let buttons = document.querySelectorAll("input[id$='Btn']");
+        for (let i = 0; i < buttons.length; i++) {
+            let element = buttons[i];
+            element.addEventListener("click", convertTime);
+        }
+
+        function convertTime() {
+            let seconds = 0;
+            switch (this.id) {
+                case "daysBtn":
+                    seconds = Number(document.getElementById("days").value) * 86400;
+                    break;
+
+                case "hoursBtn":
+                    seconds = Number(document.getElementById("hours").value) * 3600;
+                    break;
+
+                case "minutesBtn":
+                    seconds = Number(document.getElementById("minutes").value) * 60;
+                    break;
+
+                case "secondsBtn":
+                    seconds = Number(document.getElementById("seconds").value);
+                    break;
+            }
+            document.getElementById("days").value = seconds / 86400;
+            document.getElementById("hours").value = seconds / 3600;
+            document.getElementById("minutes").value = seconds / 60;
+            document.getElementById("seconds").value = seconds;
+        }
+    }
+</script>
+</html>
