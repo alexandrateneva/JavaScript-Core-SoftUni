@@ -1,0 +1,22 @@
+<section id="viewDetailsAd" class="viewDetailsAd" style="display: block;">
+    <div><img src="{{image}}" style="height: 300px;">
+        <br>
+        <label>Title:</label>
+        <h1>{{title}}</h1>
+        <label>Description:</label>
+        <h3>{{description}}</h3>
+        <br>
+        <label>Price:</label>
+        <h3>{{price}}</h3>
+        <label>Publisher:</label>
+        <div>{{publisher}}</div>
+        <label>Date:</label>
+        <div>{{datePublished}}</div>
+        <label>View count:</label>
+        {{#if hasFirstView}}
+            <div>{{viewCount}}</div>
+        {{else}}
+            <div>0</div>
+        {{/if}}
+    </div>
+</section>
