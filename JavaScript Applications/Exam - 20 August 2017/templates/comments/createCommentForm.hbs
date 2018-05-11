@@ -1,0 +1,8 @@
+<div class="post post-content">
+    <form id="commentForm" method="post" action="#/create/comment/post/{{post._id}}">
+        <input type="hidden" name="postId" value="{{post._id}}" />
+        <label>Comment</label>
+        <textarea name="content" type="text"></textarea>
+        <input type="submit" value="Add Comment" id="btnPostComment">
+    </form>
+</div>

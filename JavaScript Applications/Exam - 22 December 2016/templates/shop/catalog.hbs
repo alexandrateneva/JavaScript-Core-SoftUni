@@ -1,0 +1,26 @@
+{{>header}}
+
+<section id="viewShop">
+    <h1>Products</h1>
+    <div class="products" id="shopProducts">
+        <table>
+            <thead>
+            <tr>
+                <th>Product</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#each products}}
+                {{>product}}
+            {{else}}
+                <p>There are no products in database.</p>
+            {{/each}}
+            </tbody>
+        </table>
+    </div>
+</section>
+
+{{> footer}}
